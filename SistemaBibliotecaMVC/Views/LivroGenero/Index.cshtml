@@ -1,0 +1,41 @@
+﻿@model PaginacaoEntidadeVO<LivroGenero>
+
+@Html.Partial("CabecalhoPagina/_PartialCabecalhoIndex", "Livro Gênero")
+
+@using (Html.BeginForm("Index"
+                        , "LivroGenero"
+                            , FormMethod.Get
+                                , new { @class = "form-inline" }))
+{
+    <p>
+        Filtrar por Nome: @Html.TextBox("Nome", null, new { @class = "form-control", placeholder = "Ficcção, Suspense..." })
+        <input type="submit" value="Aplicar" class="btn btn-primary" />
+    </p>
+}
+
+<table class="table table-hover table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Nome)</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (LivroGenero item in Model.Lista)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Nome</td>
+                <td>
+                    @Html.Partial("_PartialAcaoIndex", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+@Html.Paginacao(Model, new { nome = ViewBag.Nome })
+<script src="~/Scripts/site.js"></script>
+

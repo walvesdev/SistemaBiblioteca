@@ -1,0 +1,67 @@
+﻿@model PaginacaoEntidadeVO<Autor>
+
+@Html.Partial("CabecalhoPagina/_PartialCabecalhoIndex", "Autor")
+
+<table class="table table-hover table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Pseudonimo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().AnoNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Pais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Bibliografia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Lista)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CPF)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pseudonimo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnoNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pais)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bibliografia)
+                </td>
+                <td>
+                    @Html.Partial("_PartialAcaoIndex", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+@Html.Paginacao(Model)
+<script src="~/Scripts/site.js"></script>

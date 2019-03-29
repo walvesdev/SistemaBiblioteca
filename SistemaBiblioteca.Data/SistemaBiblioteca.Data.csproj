@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67D270CE-95D5-4A66-A552-E90F762B8B11}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaBiblioteca.Data</RootNamespace>
+    <AssemblyName>SistemaBiblioteca.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EFDbContext.cs" />
+    <Compile Include="Migrations\201811122147540_SbMigration.cs" />
+    <Compile Include="Migrations\201811122147540_SbMigration.Designer.cs">
+      <DependentUpon>201811122147540_SbMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811122256512_SbMigration1.cs" />
+    <Compile Include="Migrations\201811122256512_SbMigration1.Designer.cs">
+      <DependentUpon>201811122256512_SbMigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811122317300_SbMigration2.cs" />
+    <Compile Include="Migrations\201811122317300_SbMigration2.Designer.cs">
+      <DependentUpon>201811122317300_SbMigration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811122339043_SbMigration3.cs" />
+    <Compile Include="Migrations\201811122339043_SbMigration3.Designer.cs">
+      <DependentUpon>201811122339043_SbMigration3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811122339588_SbMigration4.cs" />
+    <Compile Include="Migrations\201811122339588_SbMigration4.Designer.cs">
+      <DependentUpon>201811122339588_SbMigration4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811122347327_SbMigration5.cs" />
+    <Compile Include="Migrations\201811122347327_SbMigration5.Designer.cs">
+      <DependentUpon>201811122347327_SbMigration5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811122348387_SbMigration6.cs" />
+    <Compile Include="Migrations\201811122348387_SbMigration6.Designer.cs">
+      <DependentUpon>201811122348387_SbMigration6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaBiblioteca.Domain\SistemaBiblioteca.Domain.csproj">
+      <Project>{b7cd49f4-893f-4b0c-bdcd-487ce1a7aa81}</Project>
+      <Name>SistemaBiblioteca.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811122147540_SbMigration.resx">
+      <DependentUpon>201811122147540_SbMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811122256512_SbMigration1.resx">
+      <DependentUpon>201811122256512_SbMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811122317300_SbMigration2.resx">
+      <DependentUpon>201811122317300_SbMigration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811122339043_SbMigration3.resx">
+      <DependentUpon>201811122339043_SbMigration3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811122339588_SbMigration4.resx">
+      <DependentUpon>201811122339588_SbMigration4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811122347327_SbMigration5.resx">
+      <DependentUpon>201811122347327_SbMigration5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811122348387_SbMigration6.resx">
+      <DependentUpon>201811122348387_SbMigration6.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

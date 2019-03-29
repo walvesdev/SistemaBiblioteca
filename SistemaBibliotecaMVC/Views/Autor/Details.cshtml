@@ -1,0 +1,68 @@
+﻿@model SistemaBiblioteca.Domain.Entidades.Autor
+
+@Html.Partial("CabecalhoPagina/_PartialCabecalhoDetails", "Autor")
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pseudonimo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pseudonimo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnoNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnoNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bibliografia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bibliografia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

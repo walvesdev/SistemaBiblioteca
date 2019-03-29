@@ -1,0 +1,26 @@
+﻿@model LivroGenero
+
+@Html.Partial("CabecalhoPagina/_PartialCabecalhoEdit", "Livro Gênero")
+
+<form method="post" action="/LivroGenero/Edit/@Model.Id">
+    @Html.ValidationSummary(true
+        , "Preencha os campos obrigatórios."
+            , new { @class = "text-danger" })
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Id, new { @class = "col-sm-3 col-form-label" })
+        <div class="col-sm-9">
+            @Html.TextBox("Id", Model?.Id, new { @class = "form-control-plaintext", @readonly = true })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Nome, new { @class = "col-sm-3 col-form-label" })
+        <div class="col-sm-9">
+            @Html.ValidationMessage("Nome", "*", new { @class = "text-danger", @style = "float: left" })
+            @Html.TextBox("Nome", Model?.Nome, new { @class = "form-control" })
+        </div>
+    </div>
+    <hr />
+    @Html.ActionLink("Voltar", "Index", "LivroGenero", null, new { @class = "btn btn-secondary btn-sm" })
+    <input type="submit" value="Salvar" class="btn btn-primary btn-sm" />
+</form>

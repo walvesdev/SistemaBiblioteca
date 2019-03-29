@@ -1,0 +1,13 @@
+﻿@model string
+<div class="bg-dark p-3 my-3 text-white-50 rounded box-shadow">
+    <div class="float-right">
+        <a href="@Url.Action("Create")"
+           class="btn btn-primary btn-sm">
+            <i class="icon ion-md-add"></i> Adicionar @Model
+        </a>
+    </div>
+    <div class="lh-100">
+        <h2 class="mb-0 text-white lh-100">@Model</h2>
+        <small>Listagem de dados de @Model.ToLower()</small>
+    </div>
+</div>

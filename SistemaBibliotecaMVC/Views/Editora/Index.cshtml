@@ -1,0 +1,54 @@
+﻿@model PaginacaoEntidadeVO<SistemaBiblioteca.Domain.Entidades.Editora>
+
+@Html.Partial("CabecalhoPagina/_PartialCabecalhoIndex", "Editora")
+
+<table class="table table-hover table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().RazaoSocial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().CNPJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lista.FirstOrDefault().Telefone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Lista)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RazaoSocial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNPJ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.Partial("_PartialAcaoIndex", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+@Html.Paginacao(Model)
+<script src="~/Scripts/site.js"></script>
